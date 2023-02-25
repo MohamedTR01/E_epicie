@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-3 mb-3">
+  <br>
+  <center>
+    <h3 class= " text-white " >Bienvenue dans l'organisation et la gestion de votre propre épicerie</h3>
+  </center>
+  <br><br>
+    <div class="row">
+        <div class="col-lg-5 ml-4">
+            <div class="card shadow" style="width: 30rem;">
+                <img src="https://img.freepik.com/free-vector/demand-analysts-shaking-hands-from-laptops-screens-planning-future-demand-demand-planning-demand-analytics-digital-sales-forecast-concept-illustration_335657-2098.jpg?w=2000" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="{%url 'login'%}" class="btn btn-primary"><strong>Gestion des clients et des crédits par clients</strong></a>
+                  <br><br>
+                  <p class="card-text">La gestion des clients et des crédits par client consiste à suivre les informations liées au profil des clients, à leurs achats, à leurs paiements et à leur crédit disponible. Cette gestion permet de faciliter les transactions commerciales et de maintenir une bonne relation avec les clients.</p>
+                  
+                </div>
+              </div>
+            
+        </div>
+
+        <div class="col-lg-6 ml-4">
+            <div class="card shadow" style="width: 35rem;">
+                <img src="https://swiver.io/wp-content/uploads/2021/03/hero-stock-1024x578.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="#" class="btn btn-primary"><strong>Gestion des produits/articles</strong></a>
+                  <br><br>
+                  <p class="card-text">La gestion des articles/produits consiste à suivre les informations clés sur les produits proposés à la vente tels que le nom, la description, le prix, la quantité en stock et les variantes disponibles. Cette gestion permet d'assurer une bonne organisation de l'inventaire et de faciliter les transactions commerciales.</p>
+                </div>
+              </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

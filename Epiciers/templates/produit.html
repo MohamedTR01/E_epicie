@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<br><br><br><br>
+<a class="btn btn-primary btn-lg btn-block" href="">CRÉER UNE FICHE PRODUIT</a>
+<br>
+{% comment %} <a href= "#" class="btn btn-outline-danger ml-3 shadow-lg">SUPPRIMER</a> {% endcomment %}
+<a href= "{% url 'ap'%}" class="btn btn-outline-warning ml-3 shadow-lg">AJOUTER UN PRODUIT</a>
+<a href= "{% url 'profile'%}" class="btn btn-outline-info ml-3 shadow-lg">⤴️</a>
+{% comment %} <a href= "#" class="btn btn-outline-info ml-3 shadow-lg">MODIFIER</a> {% endcomment %}
+
+<br><br>
+<table class="table table-hover table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Description</th>
+        <th scope="col">Catégorie</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Quantité en stock</th>
+        <th scope="col">Quantité vendues</th>
+        <th scope="col"><em>Mise à jour</em></th>
+        <th scope="col"><em>Supprimer</em></th>
+        {% for produit in produits %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><a href="#">{{produit.id}}</a></th>
+        <td>{{produit.nom}}</td>
+        <td>{{produit.description}}</td>
+        <td>{{produit.catégorie}}</td>
+        <td>{{produit.prix}}</td>
+        <td>{{produit.quantité_en_stock}}</td>
+        <td>{{produit.quantité_vendues}}</td>
+        <td><a class="btn btn-outline-info ml-3 shadow-lg" href="{% url 'mp' produit.id %}">MODIFIER</td>
+          <td><a class=" btn btn-outline-danger ml-3 shadow-lg " href="{% url 'sp' produit.id %}">SUPPRIMER</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+  {% else %}
+      <br><br><br><br><br>
+      <center>
+      <h1 class="text-white"> Vous n'êtes pas connecté</h1>
+     <br><br>
+      <a href="{% url 'login' %}"  class="btn btn-primary btn-lg" >Connectez-vous</a>
+    </center>
+  {% endif %}
+
+  {% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

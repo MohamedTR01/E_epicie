@@ -1,0 +1,56 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+{% for message in messages %}
+<strong>{{ message }}<strong>
+{% endfor %}
+{% if user.is_authenticated %}
+<br>
+<center>
+<h3 class= " mb-3 col-lg-5 ml-4 card shadow p-4"> Bonjour "{{username}}" bienvenu sur notre site E-epicie</h3>
+
+<h4 class= " text-white shadow p-4" >Maintenant, vous pouvez gérer automatique les crédits de vos clients et les articles</h4>
+
+</center>
+<div class="container mt-3 mb-3">
+<div class="row">
+    <div class="col-lg-5 ml-4">
+        <div class="card shadow" style="width: 30rem;">
+            <img src="https://img.freepik.com/free-vector/demand-analysts-shaking-hands-from-laptops-screens-planning-future-demand-demand-planning-demand-analytics-digital-sales-forecast-concept-illustration_335657-2098.jpg?w=2000" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Gestion des clients et des crédits par clients</h5>
+              <p class="card-text"></p>
+              <a href= "{% url 'client'%}" class="btn btn-primary">Cliquez ici pour gérer vos clients</a>
+            </div>
+          </div>
+        
+    </div>
+
+    <div class="col-lg-6 ml-4">
+        <div class="card shadow" style="width: 35rem;">
+            <img src="https://swiver.io/wp-content/uploads/2021/03/hero-stock-1024x578.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Gestion des produits/articles</h5>
+              <p class="card-text"></p>
+              <a href="{% url 'produit' %}" class="btn btn-primary">Cliquez ici pour gérer vos produits/articles</a>
+            </div>
+          </div>
+          {% else %}
+          <br><br><br><br><br>
+          <center>
+          <h1 class="text-white"> Vous n'êtes pas connecté</h1>
+         <br><br>
+          <a href="{% url 'login' %}"  class="btn btn-primary btn-lg" >Connectez-vous</a>
+        </center>
+          
+    </div>
+</div>
+</div>
+
+
+
+{% endif %}
+
+
+{% endblock content %}

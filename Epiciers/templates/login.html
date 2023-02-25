@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+{% for message in messages %}
+<center>
+<div class="alert alert-success shadow"<strong>{{ message }}</strong></div>
+</center>
+{% endfor %}
+<br>
+<div class="container mt-3 mb-5 text-white">
+    <div class="row mt-5 mb-5 shadow">
+        <div class="col-lg-6 shadow p-4">
+          <h1>Se connecter ici </h1>
+          <br>
+            <form method="post" action="/login">
+              {% csrf_token %}
+                <div class="mb-3">
+                  <label for="username" class="form-label">Nom d'utilisateur</label>
+                  <input type="text" name="username" placeholder = "Enter your username" class="form-control" id="username" > 
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Mot de passe</label>
+                  <input type="password" name="password" placeholder = "Enter your password" class="form-control" id="password">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Connectez-vous</button>
+                <br><br>
+                <div class="tiktok-8on88-DivContainer e1b6crsh0"><div data-e2e="bottom-text">Tu n'as pas de compte ?  </div><a href="register" class="tiktok-mfyvn1-ALink epl6mg0"><span data-e2e="bottom-sign-up" class="tiktok-1fptnvp-SpanLinkText e1b6crsh1">Inscription</span></a></div>
+              </form>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://www.wavesoft.fr/sites/default/files/styles/visuel_page/public/references/capture_0.png?itok=YD3Pc0xy" alt="" class="img-fluid img-reponsive mt-5 mb-5">
+        </div>
+{% endblock %}

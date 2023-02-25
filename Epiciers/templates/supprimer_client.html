@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br><br><br>
+<div class="container mt-3 mb-5 ">
+<div class="card card-rectangle">
+    <div class="col-md-6 ml-5"> 
+    <div class="card-body">
+
+    <p> Voulez-vous supprimer ce client</p>
+    <form action="{% url 'sc' item.id %}" method = "POST">
+        {% csrf_token %}
+        <a class="btn btn-warning" href="{% url 'client' %}"> Annuler</a>
+        <input class= "btn btn-danger" type="submit" name="Confirmer">
+    </form>
+    </div>
+</div>
+</div>
+
+
+</div>
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+{% for message in messages %}
+<center>
+<div class="alert alert-danger shadow"<strong>{{ message }}</strong></div>
+</center>
+{% endfor %}
+<div class="container mt-3 mb-5 text-white">
+    <div class="row mt-5 mb-5 shadow">
+        <div class="col-lg-6 shadow p-4">
+            <h1>S'enregister ici </h1>
+<br>
+            <form method="post" action="/register">
+              {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nom d'utilisateur</label>
+                    <input type="text" name='username' placeholder = "Enter your username" class="form-control" id="username" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="firstname" class="form-label">Prénom</label>
+                    <input type="text" name='firstname' placeholder = "Enter your firstname" class="form-control" id="firstname" required>
+                  </div>
+                <div class="mb-3">
+                  <label for="lastname" class="form-label">Nom</label>
+                  <input type="text" name='lastname' placeholder = "Enter your lastname" class="form-control" id="lastname" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Adresse Email</label>
+                    <input type="text" name="email" placeholder = "Enter your email address" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Mot de passe</label>
+                  <input type="password" name="password" placeholder = "Enter your password" class="form-control" id="password"required>
+                </div>
+                <div class="mb-3">
+                    <label for="password1" class="form-label">Répétez votre mot de passe</label>
+                    <input type="password" name="password1" placeholder = "Repeat your password" class="form-control" id="password1"required>
+                  </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Sélectionnez</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Connectez-vous</button>
+              </form>
+        </div>
+        <div class="col-lg-6 mt-5">
+            <img src="https://www.celge.fr/wp-content/uploads/2017/07/Gestion_par_affaire.png" alt="" class="img-fluid img-reponsive mt-5 mb-5 shadow p-2">
+        </div>
+{% endblock %}

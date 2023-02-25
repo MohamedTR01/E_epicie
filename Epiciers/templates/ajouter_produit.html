@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %} 
+{% if user.is_authenticated %}
+<br><br>
+<p style="font-family: Arial; font-size: 30px; font-weight: bold; color: white ; text-align: left ; padding-left: 40px; text-decoration: underline;">AJOUTER PRODUIT</p>
+
+
+<form action="" method="POST"...>
+    {% csrf_token %}
+    <div class="col-md-6 ml-5"> 
+        <div class="card card-body">
+     {{form}}
+  
+
+<a class="btn btn-warning" href="{% url 'produit' %}"> Annuler</a>
+<input type="submit" name = "Envoyer" class="btn btn-info shadow-lg"> 
+</div>
+</div>
+</form>
+</form>
+{% else %}
+<br><br><br><br><br>
+<center>
+<h1 class="text-white"> Vous n'êtes pas connecté</h1>
+<br><br>
+<a href="{% url 'login' %}"  class="btn btn-primary btn-lg" >Connectez-vous</a>
+</center>
+{% endif %}
+
+
+
+{% endblock content %}
+
