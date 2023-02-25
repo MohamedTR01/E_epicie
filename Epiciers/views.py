@@ -140,9 +140,5 @@ def supprimer_produit(request,pk):
 
 
 def a_propos(request):
-    return render
+    return render(request,'a_propos.html')
 
-def myview(request):
-    user=User.objects.get(id=request.user.id)
-    context={'user':user}
-    return render(request,'myview.html',context)

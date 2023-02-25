@@ -22,7 +22,8 @@ urlpatterns = [
     path('ap/',views.ajouter_produit,name='ap'),
     path('mp/<str:pk>',views.modifier_produit,name='mp'),
     path('sp/<str:pk>',views.supprimer_produit,name='sp'),
+    path('a_propos',views.a_propos,name='a_propos')
 
-    path('view',views.myview,name='view'),
+
     
 ]
